@@ -49,7 +49,7 @@ Client threads can still generate requests (PUT, GET, DELETE) to any of the repl
 *   **Paxos Implementation:** Each server will need to embody Proposer, Acceptor, and Learner logic, or these roles could be separate threads/objects within each server.
 *   **Inter-Server Communication (for Paxos):** The chosen RPC mechanism will be used for all Paxos messages (`prepare`, `promise`, `accept`, `accepted`, etc.) between server replicas.
 
-## Project Structure (Conceptual)
+## Project Structure 
 
 *   **`PaxosInterfaces.java` (or similar for Thrift IDL):**
     *   Defines remote methods for Paxos messages: `prepare(proposalID)`, `promise(proposalID, acceptedID, acceptedValue)`, `acceptRequest(proposalID, value)`, `accepted(proposalID, value)`.
